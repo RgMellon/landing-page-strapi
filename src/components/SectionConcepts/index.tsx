@@ -1,0 +1,26 @@
+import React from 'react'
+
+import Container from 'components/Container'
+import Heading from 'components/Heading'
+
+import * as S from './styles'
+import { SectionConceptsProps } from 'types/api'
+
+const SectionConcepts = ({ title, concepts }: SectionConceptsProps) => {
+  /** Ver a forma que foi feita */
+
+  return (
+    <Container>
+      <S.Box>
+        <Heading lineBottom>{title}</Heading>
+        <S.List>
+          {concepts.map((concept) => (
+            <S.Item key={concept.id}>{concept.title}</S.Item>
+          ))}
+        </S.List>
+      </S.Box>
+    </Container>
+  )
+}
+
+export default SectionConcepts
